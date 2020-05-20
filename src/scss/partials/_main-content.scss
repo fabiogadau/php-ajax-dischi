@@ -4,6 +4,7 @@ main {
    background-color: $main-content_bg-color;
 }
 
+// Albums
 #albums {
    @include center-content;
    padding: 100px 0 50px;
@@ -12,17 +13,9 @@ main {
    justify-content: space-between;
    flex-wrap: wrap;
 
+   // Album
    .album {
-      flex-basis: calc(100% / 4);
-      margin-right: 30px;
-      margin-bottom: 50px;
-      padding: 10px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      background-color: #000;
-      border-radius: 15px;
+      @include album-setup;
 
       & > h2 {
          margin-bottom: 10px;
@@ -39,13 +32,14 @@ main {
    }
 }
 
+// Album cover
 .album-cover {
    width: $total-width;
    margin-bottom: 20px;
 
    img {
    @include img-size;
-   border-radius: 50%;
+   @include round-img;
    transition: border-radius .2s linear;
 
       &:hover {

@@ -13,11 +13,32 @@ body {
 }
 
 // Mixins
+// width
 @mixin center-content {
    max-width: $sections-width;
    margin: 0 auto;
 }
 
+// album img width
 @mixin img-size {
    max-width: $total-width;
+}
+
+// album
+@mixin album-setup {
+   flex-basis: calc(100% / 4);
+   margin-right: 30px;
+   margin-bottom: 50px;
+   padding: 10px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   text-align: center;
+   background-color: #000;
+   border-radius: 15px;
+}
+
+// img
+@mixin round-img {
+   border-radius: 50%;
 }
