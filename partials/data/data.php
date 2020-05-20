@@ -1,4 +1,4 @@
-<?php 
+<?php // Album Database
    $albums = [
       [
          'cover' => 'http://localhost:80/Boolean/php-ajax-dischi/dist/img/area.jpg',

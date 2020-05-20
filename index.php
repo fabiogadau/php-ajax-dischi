@@ -17,18 +17,16 @@
       Stampare direttamente i dischi in pagina: al caricamento della pagina ci saranno tutti i dischi.
       Utilizzare Html, Sass e PHP.
    -->
+   
+   <?php // Header
+      include_once __DIR__ . '/partials/template/header.php';
+   ?>
 
-   <main id="albums">
-      <?php
-         foreach ( $albums as $album ) { ?>
-            <div>
-               <img src="<?php echo $album['cover']; ?>" alt="cover">
-               <?php echo $album['album']; ?>
-               <?php echo $album['artist']; ?>
-               <?php echo $album['year']; ?>
-            </div>
-         <? } ?>
-   </main>
+   <?php // Main Content
+      include_once __DIR__ . '/partials/template/main-content.php';
+   ?>
+
+
 
 </body>
 </html>
