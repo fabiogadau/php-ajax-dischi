@@ -1,12 +1,12 @@
 <!-- Main Content -->
-<main id="albums-container">
+<main>
    <div id="albums">
       <?php
          foreach ( $albums as $album ) { ?>
-            <div>
-               <div><img class="album-cover" src="<?php echo $album['cover']; ?>" alt="cover"></div>
-               <span><?php echo $album['album']; ?></span>
-               <span><?php echo $album['artist']; ?></span>
+            <div class="album">
+               <div class="album-cover"><img src="<?php echo $album['cover']; ?>" alt="cover"></div>
+               <h2><?php echo $album['album']; ?></h2>
+               <h3><?php echo $album['artist']; ?></h3>
                <span><?php echo $album['year']; ?></span>
             </div>
       <? } ?>

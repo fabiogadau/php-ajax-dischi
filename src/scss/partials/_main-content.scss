@@ -1,0 +1,55 @@
+/* MAIN CONTENT */
+main {
+   width: $total-width;
+   background-color: $main-content_bg-color;
+}
+
+#albums {
+   @include center-content;
+   padding: 100px 0 50px;
+   color: $main-content_color;
+   display: flex;
+   justify-content: space-between;
+   flex-wrap: wrap;
+
+   .album {
+      flex-basis: calc(100% / 4);
+      margin-right: 30px;
+      margin-bottom: 50px;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      background-color: #000;
+      border-radius: 15px;
+
+      & > h2 {
+         margin-bottom: 10px;
+      }
+
+      & > h3 {
+         margin-bottom: 5px;
+         color: #858585;
+      }
+   }
+
+   .album:last-child {
+      margin-right: 0;
+   }
+}
+
+.album-cover {
+   width: $total-width;
+   margin-bottom: 20px;
+
+   img {
+   @include img-size;
+   border-radius: 50%;
+   transition: border-radius .2s linear;
+
+      &:hover {
+         border-radius: 0;
+      }
+   }
+}
