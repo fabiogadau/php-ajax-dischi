@@ -11,6 +11,7 @@
 <body>
    
    <!--
+      MILESTONE 1
       Stampare a schermo una decina di dischi musicali.
       Utilizzare solo PHP per ora e non AJAX.
       Stampare direttamente i dischi in pagina: al caricamento della pagina ci saranno tutti i dischi.

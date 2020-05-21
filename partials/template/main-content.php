@@ -1,8 +1,8 @@
-<!-- Main Content -->
 <?php // Database Import
    include_once __DIR__ . '/../data/data.php';
 ?>
 
+<!-- Main Content -->
 <main>
    <div id="albums">
       <?php
@@ -16,4 +16,3 @@
       <?php } ?>
    </div>
 </main>
-
