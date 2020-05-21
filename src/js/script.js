@@ -46,7 +46,7 @@ $(document).ready(function(){
             for ( var i = 0; i < res.length; i++ ){
                var item = res[i];
 
-               if ( item.artist.toLowerCase().includes(newSearch) ){
+               if ( item.artist.toLowerCase().includes(newSearch) || item.album.toLowerCase().includes(newSearch) ){
                   var context = {
                      albumCover: item.cover,
                      albumName: item.album,
