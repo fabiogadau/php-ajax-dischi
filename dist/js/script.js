@@ -96,8 +96,7 @@
 $(document).ready(function () {
   // Variables
   var myAPI = 'http://localhost:3000/Boolean/php-ajax-dischi/partials/json/json-script.php';
-  var albumsContainer = $('#albums'); // var album = $('.album');
-
+  var albumsContainer = $('#albums');
   var albumsInput = $('#album-input'); // Init Handlebars
 
   var source = $('#album-template').html();
@@ -126,21 +125,55 @@ $(document).ready(function () {
       console.log('Error API Call');
     }
   }); // End AJAX Call
-  // Filtering artists and albums by writing in the input
+  // Filtering artists and albums by writing in the input using AJAX
 
   albumsInput.keyup(function () {
     var newSearch = $(this).val().trim().toLowerCase();
-    $('.album').each(function () {
-      var albumArtist = $(this).children('h3').text().toLowerCase();
-      var albumName = $(this).children('h2').text().toLowerCase();
+    albumsContainer.html(''); // Start AJAX Call
 
-      if (albumArtist.includes(newSearch) || albumName.includes(newSearch)) {
-        $(this).show();
-      } else {
-        $(this).hide();
+    $.ajax({
+      url: myAPI,
+      method: 'GET',
+      success: function success(res) {
+        for (var i = 0; i < res.length; i++) {
+          var item = res[i];
+
+          if (item.artist.toLowerCase().includes(newSearch)) {
+            var context = {
+              albumCover: item.cover,
+              albumName: item.album,
+              albumArtist: item.artist,
+              albumYear: item.year,
+              albumData: i
+            };
+            var output = template(context);
+            albumsContainer.append(output);
+          }
+
+          ;
+        }
+
+        ;
+      },
+      error: function error() {
+        console.log('Error API Call');
       }
-    });
-  });
+    }); // End AJAX Call
+  }); // Filtering artists and albums by writing in the input
+
+  /*albumsInput.keyup(function(){
+     var newSearch = $(this).val().trim().toLowerCase();
+       $('.album').each(function(){
+        var albumArtist = $(this).children('h3').text().toLowerCase();
+        var albumName = $(this).children('h2').text().toLowerCase();
+          if ( albumArtist.includes(newSearch) || albumName.includes(newSearch) ){
+           $(this).show();
+        }
+        else {
+           $(this).hide();
+        }
+     });
+  });*/
 }); // End Ready Document
 
 /***/ }),

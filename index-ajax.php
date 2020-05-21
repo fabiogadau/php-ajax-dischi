@@ -14,6 +14,9 @@
       MILESTONE 2
       Attraverso l’utilizzo di AJAX:
       al caricamento della pagina ajax chiederà attraverso una chiamata i dischi a php e li stamperà attraverso handlebars.
+      
+      Parte opzionale:
+      Attraverso un’altra chiamata ajax, filtrare gli album per artista.
    -->
    
    <?php // Header
