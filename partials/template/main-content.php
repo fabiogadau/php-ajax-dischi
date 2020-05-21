@@ -1,4 +1,8 @@
 <!-- Main Content -->
+<?php // Database Import
+   include_once __DIR__ . '/../data/data.php';
+?>
+
 <main>
    <div id="albums">
       <?php
@@ -9,7 +13,7 @@
                <h3><?php echo $album['artist']; ?></h3>
                <span><?php echo $album['year']; ?></span>
             </div>
-      <? } ?>
+      <?php } ?>
    </div>
 </main>
 

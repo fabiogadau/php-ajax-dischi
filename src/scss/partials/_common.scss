@@ -27,7 +27,7 @@ body {
 // album
 @mixin album-setup {
    flex-basis: calc(100% / 4);
-   margin-right: 30px;
+   margin-right: 1px;
    margin-bottom: 50px;
    padding: 10px;
    display: flex;

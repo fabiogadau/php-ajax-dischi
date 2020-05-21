@@ -1,7 +1,3 @@
-<?php // IMPORTS
-   include_once __DIR__ . '/partials/data/data.php';
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,8 +24,6 @@
    <?php // Main Content
       include_once __DIR__ . '/partials/template/main-content.php';
    ?>
-
-
 
 </body>
 </html>
