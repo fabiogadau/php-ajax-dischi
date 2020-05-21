@@ -29,9 +29,35 @@ body {
    border-radius: 50%;
 }
 
+// albums container
+@mixin albums-container-setup {
+   @include center-content;
+   padding: 100px 20px 50px;
+   color: $main-content_color;
+   display: flex;
+   justify-content: space-between;
+   flex-wrap: wrap;
+
+   // RESPONSIVE
+   // Smartphone Landscape
+   @include smartphone-landscape {
+      padding: 100px 180px 50px;
+   }
+
+   // Tablet
+   @include tablet-and-landscape {
+      padding: 100px 30px 50px;
+   }
+
+   // Desktop
+   @include desktop {
+      padding: 100px 0 50px;
+   }
+}
+
 // album
 @mixin album-setup {
-   flex-basis: calc(100% / 4);
+   flex-basis: 100%;
    margin-right: 1px;
    margin-bottom: 50px;
    padding: 10px;
@@ -41,6 +67,13 @@ body {
    text-align: center;
    background-color: #000;
    border-radius: 15px;
+
+   // RESPONSIVE
+   // Tablet and Desktop
+   @include tablet-and-landscape {
+      flex-basis: calc(100% / 4);
+      margin-right: 1px;
+   }
 }
 
 // input
@@ -57,5 +90,26 @@ body {
    &:hover,
    &:focus {
       background-color: #fff;
+   }
+}
+
+// RESPONSIVE
+// Smartphone Landscape
+@mixin smartphone-landscape {
+   @media all and (min-width: 667px) {
+      @content;
+   }
+}
+
+// Tablet
+@mixin tablet-and-landscape {
+   @media all and (min-width: 768px) {
+      @content;
+   }
+}
+
+@mixin desktop {
+   @media all and (min-width: 1170px) {
+      @content;
    }
 }
