@@ -17,10 +17,13 @@ header {
   background-color: #000;
 }
 
-.logo-container {
+.logo-input-container {
   max-width: 1170px;
   margin: 0 auto;
   height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .logo {
@@ -32,10 +35,25 @@ header {
   max-width: 100%;
 }
 
+#album-input {
+  height: 30px;
+  width: 150px;
+  padding: 0 0 0 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #858585;
+  color: #000;
+  transition: background-color 0.2s linear;
+}
+#album-input:hover, #album-input:focus {
+  background-color: #fff;
+}
+
 /* MAIN CONTENT */
 main {
   width: 100%;
   background-color: #1a1a1a;
+  min-height: 100vh;
 }
 
 #albums {

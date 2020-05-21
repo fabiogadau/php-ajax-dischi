@@ -96,7 +96,9 @@
 $(document).ready(function () {
   // Variables
   var myAPI = 'http://localhost:3000/Boolean/php-ajax-dischi/partials/json/json-script.php';
-  var albumsContainer = $('#albums'); // Init Handlebars
+  var albumsContainer = $('#albums'); // var album = $('.album');
+
+  var albumsInput = $('#album-input'); // Init Handlebars
 
   var source = $('#album-template').html();
   var template = Handlebars.compile(source); // Start AJAX Call
@@ -111,7 +113,8 @@ $(document).ready(function () {
           albumCover: item.cover,
           albumName: item.album,
           albumArtist: item.artist,
-          albumYear: item.year
+          albumYear: item.year,
+          albumData: i
         };
         var output = template(context);
         albumsContainer.append(output);
@@ -123,6 +126,21 @@ $(document).ready(function () {
       console.log('Error API Call');
     }
   }); // End AJAX Call
+  // Filtering artists and albums by writing in the input
+
+  albumsInput.keyup(function () {
+    var newSearch = $(this).val().trim().toLowerCase();
+    $('.album').each(function () {
+      var albumArtist = $(this).children('h3').text().toLowerCase();
+      var albumName = $(this).children('h2').text().toLowerCase();
+
+      if (albumArtist.includes(newSearch) || albumName.includes(newSearch)) {
+        $(this).show();
+      } else {
+        $(this).hide();
+      }
+    });
+  });
 }); // End Ready Document
 
 /***/ }),

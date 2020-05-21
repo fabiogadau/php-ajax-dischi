@@ -5,9 +5,12 @@ header {
 }
 
 // Logo container
-.logo-container {
+.logo-input-container {
    @include center-content;
    height: 50px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
 }
 
 // Logo
@@ -19,4 +22,8 @@ header {
    & > img {
       @include img-size;
    }
+}
+
+#album-input {
+   @include input-setup;
 }

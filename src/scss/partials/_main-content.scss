@@ -2,6 +2,7 @@
 main {
    width: $total-width;
    background-color: $main-content_bg-color;
+   min-height: 100vh;
 }
 
 // Albums

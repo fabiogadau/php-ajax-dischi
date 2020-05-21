@@ -29,7 +29,7 @@
 
    <!-- Handlebars Template -->
    <script id="album-template" type="text/x-handlebars-template">
-      <div class="album">
+      <div class="album" data-album="{{ albumData }}">
          <div class="album-cover"><img src="{{ albumCover }}" alt="cover"></div>
          <h2>{{ albumName }}</h2>
          <h3>{{ albumArtist }}</h3>

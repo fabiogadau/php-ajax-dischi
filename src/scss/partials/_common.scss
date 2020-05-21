@@ -24,6 +24,11 @@ body {
    max-width: $total-width;
 }
 
+// img
+@mixin round-img {
+   border-radius: 50%;
+}
+
 // album
 @mixin album-setup {
    flex-basis: calc(100% / 4);
@@ -38,7 +43,19 @@ body {
    border-radius: 15px;
 }
 
-// img
-@mixin round-img {
-   border-radius: 50%;
+// input
+@mixin input-setup {
+   height: 30px;
+   width: 150px;
+   padding: 0 0 0 10px;
+   border-radius: 5px;
+   border: none;
+   background-color: #858585;
+   color: #000;
+   transition: background-color .2s linear;
+
+   &:hover,
+   &:focus {
+      background-color: #fff;
+   }
 }
